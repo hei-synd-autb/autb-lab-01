@@ -1,0 +1,27 @@
+ @startuml
+struct ST_Conveyor
+ST_Conveyor : StationOne : ST_StationConveyor;
+ST_Conveyor : StationTwo : ST_StationConveyor;
+ST_Conveyor : StationThree : ST_StationConveyor;
+ST_Conveyor : StationOutput : ST_StationConveyor;
+ST_Conveyor : Motor : ST_MotorConveyor;
+ST_Conveyor : Buzzer : ST_BuzzerConveyor;
+
+struct ST_StationConveyor
+ST_StationConveyor : bButton : BOOL;
+ST_StationConveyor : bLed    : BOOL;
+ST_StationConveyor : bSensor : BOOL;
+
+struct ST_MotorConveyor
+ST_MotorConveyor : bK_ActivatePositiveDirection	: BOOL;
+ST_MotorConveyor : bK_ActivateNegativeDirection	: BOOL;
+
+struct ST_BuzzerConveyor
+ST_BuzzerConveyor : bActivate : BOOL;
+ST_BuzzerConveyor : tTime : TIME := T#2s; 
+
+struct ST_HmiConveyor
+ST_HmiConveyor : bStartConveyor	: BOOL;
+ST_HmiConveyor : bStopConveyor	: BOOL; 
+
+@enduml

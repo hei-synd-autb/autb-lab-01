@@ -1,0 +1,33 @@
+ @startuml
+
+object myConveyor
+myConveyor : ST_Conveyor;
+
+object StationOne
+StationOne : ST_StationConveyor;
+
+object StationOutput
+StationOutput : ST_StationConveyor;
+
+object StationTwo
+StationTwo : ST_StationConveyor;
+
+object StationThree
+StationThree : ST_StationConveyor;
+
+object Motor
+Motor : ST_MotorConveyor;
+
+object Buzzer
+Buzzer : ST_BuzzerConveyor;
+
+myConveyor *-- StationOne
+myConveyor *-- StationTwo
+myConveyor *-- StationThree
+myConveyor *-- StationOutput
+myConveyor *-- Motor
+myConveyor *-- Buzzer
+
+object myHmi 
+
+@enduml

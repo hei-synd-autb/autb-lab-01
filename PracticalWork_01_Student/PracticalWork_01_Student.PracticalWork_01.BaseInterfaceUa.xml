@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.14.0</Version>
+    <SymbolConfigObject version="4.1.0.0" runtimeid="3.5.17.40" libversion="4.1.0.0" compiler="3.5.17.40" lmm="3.5.17.0" profile="ctrlX PLC 1.16.1+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <ProjectInfo name="PracticalWork_01_Student" devicename="PracticalWork_01" appname="BaseInterfaceUa" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_DINT" size="4" swapsize="4" typeclass="DInt" iecname="DINT" />
+    <TypeSimple name="T_DWORD" size="4" swapsize="4" typeclass="DWord" iecname="DWORD" />
+    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
+    <TypeSimple name="T_REAL" size="4" swapsize="4" typeclass="Real" iecname="REAL" />
+    <TypeSimple name="T_SINT" size="1" swapsize="1" typeclass="SInt" iecname="SINT" />
+    <TypeSimple name="T_WORD" size="2" swapsize="2" typeclass="Word" iecname="WORD" />
+  </TypeList>
+  <NodeList>
+    <Node name="BaseInterfaceUa">
+      <Node name="PLC_PRG">
+        <Node name="iCount" type="T_INT" access="ReadWrite" />
+      </Node>
+      <Node name="PRG_MapBox">
+        <Node name="UA_Balluf_bcm0002_Data_1" type="T_REAL" access="ReadWrite" />
+        <Node name="UA_Balluf_bcm0002_Data_2" type="T_REAL" access="ReadWrite" />
+        <Node name="UA_Balluf_bcm0002_Data_3" type="T_REAL" access="ReadWrite" />
+        <Node name="UA_Balluf_bcm0002_Status" type="T_DWORD" access="ReadWrite" />
+        <Node name="UA_Balluf_bcm0002_Temperature" type="T_REAL" access="ReadWrite" />
+        <Node name="UA_ButtonAndSignal_In_Estop" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_ButtonAndSignal_In_Reset" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_ButtonAndSignal_In_Start" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_ButtonAndSignal_In_Stop" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_ButtonAndSignal_Out_Execute" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_ButtonAndSignal_Out_Idle" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_ButtonAndSignal_Out_Stopped" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_0_0" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_0_1" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_0_2" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_0_3" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_0_4" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_0_5" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_0_6" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_0_7" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_1_0" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_1_1" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_1_2" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_1_3" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_1_4" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_1_5" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_1_6" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_1_7" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_2_0" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_2_1" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_2_2" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_2_3" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_2_4" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_2_5" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_2_6" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_2_7" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_3_0" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_3_1" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_3_2" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_3_3" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_3_4" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_3_5" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_3_6" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalInput_32_Input_3_7" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_0_0" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_0_1" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_0_2" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_0_3" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_0_4" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_0_5" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_0_6" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_0_7" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_1_0" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_1_1" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_1_2" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_1_3" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_1_4" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_1_5" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_1_6" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_1_7" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_2_0" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_2_1" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_2_2" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_2_3" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_2_4" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_2_5" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_2_6" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_2_7" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_3_0" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_3_1" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_3_2" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_3_3" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_3_4" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_3_5" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_3_6" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_DigitalOutput_32_Output_3_7" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_Festo_SetOut" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_O300_DL_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_O300_DL_BCD1" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_O300_DL_Q" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_O300_DL_Value" type="T_WORD" access="ReadWrite" />
+        <Node name="UA_O300_ZL_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_O300_ZL_BCD1" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_O300_ZL_Q" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_ReadCounterFromStation" type="T_DINT" access="ReadWrite" />
+        <Node name="UA_Schunk_mms_Value" type="T_WORD" access="ReadWrite" />
+        <Node name="UA_U300_D50_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_U300_D50_Q" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_U300_D50_Scale" type="T_SINT" access="ReadWrite" />
+        <Node name="UA_U300_D50_SSC1" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_U300_D50_SSC2" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_U300_D50_SSC4" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_U300_D50_Value" type="T_DWORD" access="ReadWrite" />
+        <Node name="UA_U300_P50_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_U300_P50_Q" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_U300_P50_Scale" type="T_SINT" access="ReadWrite" />
+        <Node name="UA_U300_P50_SSC1" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_U300_P50_SSC2" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_U300_P50_SSC4" type="T_BOOL" access="ReadWrite" />
+        <Node name="UA_U300_P50_Value" type="T_DWORD" access="ReadWrite" />
+        <Node name="UA_WriteCounterToStation" type="T_DINT" access="ReadWrite" />
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>
