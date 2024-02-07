@@ -7,9 +7,9 @@
   "Solution": "DefaultSolution",
   "ControllerGuid": "1d54792c-3e19-43e1-baaf-7044e39c34b1",
   "LastChange": 638327046614880441,
-  "MachineName": "WE2341102",
+  "MachineName": "WE2341105",
   "UserName": "cedric.lenoir",
-  "ProjectCompleteFilename": "C:\\Users\\cedric.lenoir\\Documents\\ctrlX Core\\GIT_Programs\\autb-praticalwork-01-conveyor\\PracticalWork_01_Student\\PracticalWork_01_Student.project",
+  "ProjectCompleteFilename": "C:\\Users\\cedric.lenoir\\Documents\\AutB\\autb-lab-01\\PracticalWork_01_Student\\PracticalWork_01_Student.project",
   "CompilerVersion": {
     "Major": 3,
     "Minor": 5,
@@ -39,6 +39,11 @@
       "MachineName": "WE2341102",
       "UserName": "cedric.lenoir",
       "ProjectCompleteFilename": "C:\\Users\\cedric.lenoir\\Documents\\ctrlX Core\\GIT_Programs\\autb-praticalwork-01-conveyor\\PracticalWork_01_Student\\PracticalWork_01_Student.project"
+    },
+    "WE2341105:cedric.lenoir": {
+      "MachineName": "WE2341105",
+      "UserName": "cedric.lenoir",
+      "ProjectCompleteFilename": "C:\\Users\\cedric.lenoir\\Documents\\AutB\\autb-lab-01\\PracticalWork_01_Student\\PracticalWork_01_Student.project"
     }
   },
   "SyncDescription": false,
