@@ -1,4 +1,4 @@
-<h1 align="center">
+<h1 align="left">
   <br>
   <img src="./img/hei-en.png" alt="HEI-Vs Logo" width="350">
   <br>
@@ -10,9 +10,7 @@ Cours AutB
 
 Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 
-## Attention, plus à jour, [passer à la version française](PW01_QuickStart_fr.md).
-
-# Practical Work 01 - Quick Start
+# LAB 00 Quick Start, a kind of Hello PLC World!
 
 *Keywords:* **IDE OPC UA  HMI FUNCTION BLOCK CYCLIC TASK**
 
@@ -116,7 +114,7 @@ Le "Hello World" du PLC consiste à écrire un compteur dans un tâche et vérif
 ```iecst
 PROGRAM PLC_PRG
 VAR
-    iCount:   INT := 3;
+	iCount    : INT := 3;
 END_VAR
 
 iCount := iCount + 1;
@@ -141,10 +139,10 @@ iCount := iCount + 1;
     <figcaption>Select: Login with download</figcaption>
 </figure>
 
-# Connect your first HMI
+# Connecter l'interface utilisateur HMI, pour *Human Machine Interface*.
 
-## Configure connection on PLC Side
-Pour qu'une variable soit accessible depuis l'extérieur, il faut en informer le compilateur, en partiuclier pour qu'il la mette à disposition dans le **Node Space** OPC UA.
+## Configurer la connexion du côté PLC *Programmable Logic Ineterface.*
+Pour qu'une variable soit accessible depuis l'extérieur, il faut en informer le compilateur, en particulier pour qu'il la mette à disposition dans le **Node Space** OPC UA.
 
 > Si l'icône **Symbol Configuration** n'est pas présente, il faut l'ajouter en allant dans IDE --> Tab --> Project --> Add Object --> Symbol Configuration...
 
@@ -154,15 +152,15 @@ Pour qu'une variable soit accessible depuis l'extérieur, il faut en informer le
     <figcaption>Configure Symbol Configuration</figcaption>
 </figure>
 
-> Changed symbol configuration will be transfered with the next download or online change.
+> La configuration du symbole modifié sera transférée lors du prochain téléchargement ou de la modification en ligne..
 
-1. Select Symbol Configuration
-2. Check iCount
-3. Verify if **Support OPC UA features** is checked.
+1. Sélectionner *Symbol Configuration*
+2. Vérifier iCount
+3. Vérifier si **Support OPC UA features** est coché.
 4. Build.
-5. The variable will be available on OPC Address Space after next download.
+5. La variable sera disponible sur l'espace d'adressage OPC après le prochain téléchargement.
 
-## Connect your HMI to the address space of OPC UA
+## Connecter le HMI à l'espace d'adresses de l'OPC UA
 L'accès au PLC n'est pas nécessairement trivial. Un partie de la complexité de l'OPC UA est le résultat de ces principales qualités:
 
 1. L'accès est protégé par un mot de passe.
@@ -191,8 +189,8 @@ Lancer **Prosys OPC UA Monitor** et sélectionner **Source Servers**.
     <figcaption>Add New Source Server Connection</figcaption>
 </figure>
 
-#### Client certificate
-You could have to trust the Prosys certificate ih ctrlX Core
+#### Certificat client
+Vous pourriez avoir à valider le certificat Prosys dans l'environnement CTRLx Core.
 
 In ctrlX Core --> Settings --> Certificates & Keys --> OPC UA Server
 
@@ -202,9 +200,9 @@ In ctrlX Core --> Settings --> Certificates & Keys --> OPC UA Server
     <figcaption>Trust Opc Ua Prosys Certificate</figcaption>
 </figure>
 
-> You must accept server certificate and check its place in your PC in the tab Certificates of Prosys OPC UA Monitor.
+> Vous devez accepter le certificat du serveur et vérifier sa place sur votre PC dans l'onglet Certificats de Prosys OPC UA Monitor.
 
-> In many systems, as for Prosys, there is a **rejected folder**, sometimes it is needed to move a certificate from this folder to the ``.\PKI\CA\certs`` to allow a connection. 
+> Dans de nombreux systèmes, comme pour Prosys, il existe un **dossier rejeté**, il est parfois nécessaire de déplacer un certificat de ce dossier vers ``.\PKI\CA\certs`` pour permettre une connexion. 
 
 ### Select signal in Addess Space
 Sélectionner l'onglet **Signal Group**, puis dans **Address Space**, rechercher la variable ``iCount`` parmi toutes les informations que l'OPC UA du ctrlX Core met à disposition par défaut.
@@ -222,9 +220,9 @@ Sélectionner l'onglet **Signal Group**, puis dans **Address Space**, rechercher
 </figure>
 
 ### Panel Editor
-1. In the panel editor, select a **+** to select the **Signal Name** of ``iCount`` and be free to configure the Gauge Type and paramters of your choice.
+1. Dans l'éditeur de panneau, sélectionnez un **+** pour sélectionner le **Nom du signal** de ``iCount`` et soyez libre de configurer le type de jauge et les paramètres de votre choix.
 
-2. Open Monitoring View.
+2. Ouvrez *Monitoring View*.
 
 <figure>
     <img src="./img/ctrlxSaysHelloWorld.png"
@@ -234,17 +232,31 @@ Sélectionner l'onglet **Signal Group**, puis dans **Address Space**, rechercher
 
 **Your firt program is ready !**
 
-# Next step, program a push button
-In this part, we will write a small program to start and stop the conveyor with two push buttons.
-1. There is a push button **start**.
-2. The conveyor starts only at rising edge of the button, that is, if the button remains pressed, the conveyor does not start again after a stop.
-3. There is a push button **stop**, with the same behavior as the start button.
+# Lien vers le hardware
+Nous ne sommes pas en simulation, nous devons connecter notre logiciel avec du matériel.
 
-> Rising, or falling, edges are classicals of PLC programming. There are two function blocks for that. R_TRIG and F_TRIG.
+> Le système est un peu particulier, c'est un choix historique, une partie du matériel était existant avant l'aquisition des robots et de leur PLC intégré, nous avons donc du trouver un moyen de lier l'ancien matériel avec le nouveau.
 
-We will use two R_TRIG to detect the rising edges of buttons.
+> L'ensemble des outils de communication du CTRLx Core ne sont pas en version définitive. C'est le cas de **Profinet** qui permet de garantir une communication cyclique stricte avec les capteurs et actuateur. **Nous avons du bricoler un peu** en utilisant **OPC UA** qui n'est pas conçu pour garantir un temps de cycle stable.
 
-Add two function blocks in your variables
+> Profinet et OPC UA seront abordés plus tard dans le cours.
+
+
+
+## Programmer un bouton poussoir
+Dans cette partie, nous allons écrire un petit programme pour démarrer et arrêter le convoyeur avec deux boutons poussoirs.
+1. Il y a un bouton poussoir **start**.
+2. Le convoyeur ne démarre qu'au front montant du bouton, c'est-à-dire que si le bouton reste enfoncé, le convoyeur ne redémarre pas après un arrêt.
+3. Il y a un bouton poussoir **stop**, avec le même comportement que le bouton start.
+
+> Les fronts montants ou descendants sont des classiques de la programmation **PLC**. Il existe deux blocs fonctionnels pour cela. R_TRIG et F_TRIG.
+
+-   R_TRIG pour Rise Trigger, flanc montant.
+-   F_TRIG pour Fall Trigger, flanc descendant.
+
+Nous utiliserons deux **R_TRIG** pour détecter les fronts montants des boutons.
+
+Ajoutez deux blocs fonctionnels dans vos variables
 
 ```iecst
 PROGRAM PLC_PRG
@@ -255,24 +267,29 @@ VAR
 END_VAR
 ```
 
-Then add the following in your code
+Ajoutez ensuite ce qui suit dans votre code
 
 ```iecst
-
-IF rTrigStart.Q THEN
-	GVL_Unit.myConveyor.Motor.bK_ActivatePositiveDirection := TRUE;
-END_IF
-
-IF rTrigStop.Q THEN
-	GVL_Unit.myConveyor.Motor.bK_ActivatePositiveDirection := FALSE;
-END_IF
 
 (*
 	Declaration of all FB at the end of the code, this is a good practice.
 	You can lose one cycle but the program is more readable.
+
+    But !
+    Triggers are exceptions:
+        because the output .Q is only active in the current cycle
 *)
-rTrigStart(CLK:=GVL_Unit.myHmi.bStartConveyor);
-rTrigStop(CLK:=GVL_Unit.myHmi.bStopConveyor);
+rTrigStart(CLK:=GVL_Abox.uaAboxInterface.uaButtonAndSignal.In_Start);
+rTrigStop(CLK:=GVL_Abox.uaAboxInterface.uaButtonAndSignal.In_Stop);
+
+IF rTrigStart.Q THEN
+	TagOut.K1_DirectionOutput := TRUE;
+END_IF
+
+IF rTrigStop.Q THEN
+	TagOut.K1_DirectionOutput := FALSE;
+END_IF
+
 ```
 Complete your **Symbols** and **HMI** to Start/Stop the conveyor.
 
@@ -282,19 +299,19 @@ Complete your **Symbols** and **HMI** to Start/Stop the conveyor.
     <figcaption>Monitor Activation Of Conveyor</figcaption>
 </figure>
 
-> Observe **very carefully** the behaviour of your graph !
+> Observez **très attentivement** le comportement de votre graphe !
 
-1. OPC UA is **not real-time**.
-2. OPC UA is **not cyclical**.
-3. OPC UA sends data **only when they change**.
-4. OPC UA is **not designed for control**, but for HMI, parameters or data without strict timing requirements.
+1. OPC UA n'est **pas en temps réel**.
+2. OPC UA n'est **pas cyclique**.
+3. OPC UA envoie les données **uniquement lorsqu'elles changent**.
+4. OPC UA n'est **pas conçu pour le contrôle**, mais pour l'IHM, les paramètres ou les données sans exigences de synchronisation strictes.
 
-> There a many studies with an extension of OPC UA, **OPC UA PubSub** which is different from the classical client-server model. The goal is to use OPC UA PubSub with realtime ethernet networks. For example: [OPC UA PubSub over TSN for Realtime Industrial Communication](./pdf/OPC%20UA%20PubSub%20over%20TSN%20for%20Realtime%20Industrial%20Communication.pdf). **In 2024, there are still no commercial applications available**.
+> Il existe de nombreuses études avec une extension d'OPC UA, **OPC UA PubSub** qui est différente du modèle client-serveur classique. L'objectif est d'utiliser OPC UA PubSub avec des réseaux Ethernet en temps réel. Par exemple : [OPC UA PubSub sur TSN pour la communication industrielle en temps réel](./pdf/OPC%20UA%20PubSub%20over%20TSN%20for%20Realtime%20Industrial%20Communication.pdf). **En 2024, aucune application commerciale n'est encore disponible**.
 
-# Next step, program a timer
-The timer is another typical Function Block in PLC programming. You will use one to set a timer to stop the conveyor after a given amount of time.
+# Prochaine étape, programmer une minuterie
+Le **Timer** est un autre bloc fonctionnel typique de la programmation **PLC**. Vous en utiliserez un pour régler un **Timer** afin d'arrêter le convoyeur après un laps de temps donné.
 
-## Complete your code like that:
+## Complétez votre code comme ça :
 
 ```iecst
 PROGRAM PLC_PRG
@@ -313,7 +330,7 @@ END_VAR
 *)
 IF rTrigStop.Q       OR
    tonConveyorStop.Q THEN
-	GVL_Unit.myConveyor.Motor.bK_ActivatePositiveDirection := FALSE;
+	TagOut.K1_DirectionOutput := FALSE;
 END_IF
 
 (*
@@ -321,16 +338,17 @@ END_IF
 	You can lose one cycle but the program is more readable.
 *)
 ...
-tonConveyorStop(IN := GVL_Unit.myConveyor.Motor.bK_ActivatePositiveDirection,
+tonConveyorStop(IN := TagOut.K1_DirectionOutputn,
                 PT := T#2S);
 ```
-> **PT** for **Programmed Time**. Note the format, ``T#``*value*``unit``
+> **PT** pour **Heure programmée**. Notez le format ``T#``*valeur*``unité``
 
-> **Q** for **Output bit** is used because the **O**, *the letter* could be confused with a **0**, *the value*. For binary values, BOOL, **we prefer TRUE and FALSE** in PLC programming, even if 0 and 1 could be used too.
+> **Q** pour **Bit de sortie** est utilisé car le **O**, *la lettre* pourrait être confondu avec un **0**, *la valeur*. Pour les valeurs binaires, ``BOOL``, **nous préférons ``TRUE`` et ``FALSE``** dans la programmation automate, même si 0 et 1 pourraient également être utilisés.
 
-## Use ET Elapsed Time on a graph
-The function block TON as an outpupt ET to monitor the elapsed time from the activation of the timer until the output Q is set to TRUE.
-Complete the code, the symbols and OPC UA Monitor to display something like that.
+## Utiliser le temps écoulé ET sur un graphique
+Le bloc fonctionnel ``TON`` en tant que sortie ``ET`` pour surveiller le temps écoulé depuis l'activation de la minuterie jusqu'à ce que la sortie ``Q`` soit définie sur ``TRUE``.
+
+Complétez le code, les symboles et OPC UA Monitor pour afficher quelque chose comme ça.
 
 <figure>
     <img src="./img/ShowElapsedTime.png"
@@ -361,8 +379,8 @@ You have to check the cycle time of the task to be ``10 [ms]``.
     <figcaption>Check Task Cycle Time</figcaption>
 </figure>
 
-### Complete your code with given variables
-> PI is a constant, you can complete the precision if you want.
+### Complétez votre code avec les variables données
+> PI est une constante, vous pouvez compléter la précision si vous le souhaitez.
 
 ```iecst
 PROGRAM PLC_PRG
@@ -395,9 +413,9 @@ plot(mySinus), grid on
     <figcaption>Matlab Plot Sinus</figcaption>
 </figure>
 
-# Report
-> There is no report for this practical work, but **the Practical Work is supposed to be understood. It is part of the theory**.
+# Rapport
+> Il n'y a pas de rapport pour ces travaux pratiques, mais **les travaux pratiques sont censés être compris. Cela fait partie de la théorie**.
 
-> On request, the software used here can be provided for installation on your laptop. Windows only for ctrlX Works. This Practical Work can run perfectly on a virtual machine.
+> Sur demande, le logiciel utilisé ici peut être fourni pour une installation sur votre ordinateur portable. Windows uniquement, pour ctrlX Works.
 
-> At the end of the course you should be able to write simple structured code in any text editor.
+> A la fin du cours, vous devriez être capable d'écrire du code structuré simple dans n'importe quel éditeur de texte.
