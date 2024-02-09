@@ -105,7 +105,7 @@ Nous avons toutefois laissé les mots de passe par défaut des systèmes: Soit:
 
 Le "Hello World" du PLC consiste à écrire un compteur dans un tâche et vérifier que la tache est exécutée grâce à l'incrément du compteur.
 
-1. Ouvrir ctrlX Works
+1. Ouvrir ctrlX Works, [détails du chargement du programme ici](QuickStart_ctrlX_PLC.md).
 2. Sélectionner le PLC, réel ou virtuel sur lequel on veut travailler.
 3. Sélectionner l'App PLC et lancer ctrlX PLC Engineering.
 
