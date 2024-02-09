@@ -9,15 +9,163 @@
     <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
     <TypeSimple name="T_DINT" size="4" swapsize="4" typeclass="DInt" iecname="DINT" />
     <TypeSimple name="T_DWORD" size="4" swapsize="4" typeclass="DWord" iecname="DWORD" />
-    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
     <TypeSimple name="T_REAL" size="4" swapsize="4" typeclass="Real" iecname="REAL" />
     <TypeSimple name="T_SINT" size="1" swapsize="1" typeclass="SInt" iecname="SINT" />
     <TypeSimple name="T_WORD" size="2" swapsize="2" typeclass="Word" iecname="WORD" />
+    <TypeUserDef name="T_UA_AnalogIn" size="16" nativesize="16" typeclass="Userdef" pouclass="STRUCTURE" iecname="UA_AnalogIn">
+      <UserDefElement iecname="IW_04" type="T_WORD" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="IW_06" type="T_WORD" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="IW_08" type="T_WORD" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="IW_10" type="T_WORD" byteoffset="6" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="IW_12" type="T_WORD" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="IW_14" type="T_WORD" byteoffset="10" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="IW_16" type="T_WORD" byteoffset="12" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="IW_18" type="T_WORD" byteoffset="14" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_UA_AnalogOut" size="8" nativesize="8" typeclass="Userdef" pouclass="STRUCTURE" iecname="UA_AnalogOut">
+      <UserDefElement iecname="QW_04" type="T_WORD" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="QW_06" type="T_WORD" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="QW_08" type="T_WORD" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="QW_10" type="T_WORD" byteoffset="6" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_UA_Balluf_bcm0002" size="20" nativesize="20" typeclass="Userdef" pouclass="STRUCTURE" iecname="UA_Balluf_bcm0002">
+      <UserDefElement iecname="Data_1" type="T_REAL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Data_2" type="T_REAL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Data_3" type="T_REAL" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Temperature" type="T_REAL" byteoffset="12" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Status" type="T_DWORD" byteoffset="16" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_UA_ButtonAndSignal" size="7" nativesize="7" typeclass="Userdef" pouclass="STRUCTURE" iecname="UA_ButtonAndSignal">
+      <UserDefElement iecname="In_Estop" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="In_Reset" type="T_BOOL" byteoffset="1" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="In_Start" type="T_BOOL" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="In_Stop" type="T_BOOL" byteoffset="3" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Out_Idle" type="T_BOOL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Out_Execute" type="T_BOOL" byteoffset="5" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Out_Stopped" type="T_BOOL" byteoffset="6" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_UA_DigitalInput_32" size="32" nativesize="32" typeclass="Userdef" pouclass="STRUCTURE" iecname="UA_DigitalInput_32">
+      <UserDefElement iecname="Input_0_0" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_0_1" type="T_BOOL" byteoffset="1" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_0_2" type="T_BOOL" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_0_3" type="T_BOOL" byteoffset="3" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_0_4" type="T_BOOL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_0_5" type="T_BOOL" byteoffset="5" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_0_6" type="T_BOOL" byteoffset="6" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_0_7" type="T_BOOL" byteoffset="7" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_1_0" type="T_BOOL" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_1_1" type="T_BOOL" byteoffset="9" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_1_2" type="T_BOOL" byteoffset="10" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_1_3" type="T_BOOL" byteoffset="11" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_1_4" type="T_BOOL" byteoffset="12" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_1_5" type="T_BOOL" byteoffset="13" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_1_6" type="T_BOOL" byteoffset="14" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_1_7" type="T_BOOL" byteoffset="15" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_2_0" type="T_BOOL" byteoffset="16" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_2_1" type="T_BOOL" byteoffset="17" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_2_2" type="T_BOOL" byteoffset="18" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_2_3" type="T_BOOL" byteoffset="19" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_2_4" type="T_BOOL" byteoffset="20" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_2_5" type="T_BOOL" byteoffset="21" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_2_6" type="T_BOOL" byteoffset="22" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_2_7" type="T_BOOL" byteoffset="23" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_3_0" type="T_BOOL" byteoffset="24" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_3_1" type="T_BOOL" byteoffset="25" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_3_2" type="T_BOOL" byteoffset="26" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_3_3" type="T_BOOL" byteoffset="27" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_3_4" type="T_BOOL" byteoffset="28" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_3_5" type="T_BOOL" byteoffset="29" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_3_6" type="T_BOOL" byteoffset="30" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Input_3_7" type="T_BOOL" byteoffset="31" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_UA_DigitalOutput_32" size="32" nativesize="32" typeclass="Userdef" pouclass="STRUCTURE" iecname="UA_DigitalOutput_32">
+      <UserDefElement iecname="Output_0_0" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_0_1" type="T_BOOL" byteoffset="1" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_0_2" type="T_BOOL" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_0_3" type="T_BOOL" byteoffset="3" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_0_4" type="T_BOOL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_0_5" type="T_BOOL" byteoffset="5" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_0_6" type="T_BOOL" byteoffset="6" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_0_7" type="T_BOOL" byteoffset="7" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_1_0" type="T_BOOL" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_1_1" type="T_BOOL" byteoffset="9" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_1_2" type="T_BOOL" byteoffset="10" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_1_3" type="T_BOOL" byteoffset="11" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_1_4" type="T_BOOL" byteoffset="12" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_1_5" type="T_BOOL" byteoffset="13" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_1_6" type="T_BOOL" byteoffset="14" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_1_7" type="T_BOOL" byteoffset="15" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_2_0" type="T_BOOL" byteoffset="16" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_2_1" type="T_BOOL" byteoffset="17" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_2_2" type="T_BOOL" byteoffset="18" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_2_3" type="T_BOOL" byteoffset="19" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_2_4" type="T_BOOL" byteoffset="20" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_2_5" type="T_BOOL" byteoffset="21" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_2_6" type="T_BOOL" byteoffset="22" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_2_7" type="T_BOOL" byteoffset="23" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_3_0" type="T_BOOL" byteoffset="24" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_3_1" type="T_BOOL" byteoffset="25" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_3_2" type="T_BOOL" byteoffset="26" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_3_3" type="T_BOOL" byteoffset="27" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_3_4" type="T_BOOL" byteoffset="28" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_3_5" type="T_BOOL" byteoffset="29" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_3_6" type="T_BOOL" byteoffset="30" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Output_3_7" type="T_BOOL" byteoffset="31" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_UA_Festo" size="1" nativesize="1" typeclass="Userdef" pouclass="STRUCTURE" iecname="UA_Festo">
+      <UserDefElement iecname="SetOut" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_UA_O300_DL" size="5" nativesize="6" typeclass="Userdef" pouclass="STRUCTURE" iecname="UA_O300_DL">
+      <UserDefElement iecname="Value" type="T_WORD" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="BCD1" type="T_BOOL" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="3" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="A" type="T_BOOL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_UA_O300_ZL" size="3" nativesize="3" typeclass="Userdef" pouclass="STRUCTURE" iecname="UA_O300_ZL">
+      <UserDefElement iecname="BCD1" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="1" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="A" type="T_BOOL" byteoffset="2" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_UA_Schunk_mms" size="2" nativesize="2" typeclass="Userdef" pouclass="STRUCTURE" iecname="UA_Schunk_mms">
+      <UserDefElement iecname="Value" type="T_WORD" byteoffset="0" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_UA_U300_D50" size="10" nativesize="12" typeclass="Userdef" pouclass="STRUCTURE" iecname="UA_U300_D50">
+      <UserDefElement iecname="Value" type="T_DWORD" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Scale" type="T_SINT" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="SSC1" type="T_BOOL" byteoffset="5" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="SSC2" type="T_BOOL" byteoffset="6" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="7" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="A" type="T_BOOL" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="SSC4" type="T_BOOL" byteoffset="9" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_UA_U300_P50" size="10" nativesize="12" typeclass="Userdef" pouclass="STRUCTURE" iecname="UA_U300_P50">
+      <UserDefElement iecname="Value" type="T_DWORD" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Scale" type="T_SINT" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="SSC1" type="T_BOOL" byteoffset="5" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="SSC2" type="T_BOOL" byteoffset="6" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="7" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="A" type="T_BOOL" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="SSC4" type="T_BOOL" byteoffset="9" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_UA_AboxInterface" size="152" nativesize="156" typeclass="Userdef" pouclass="STRUCTURE" iecname="UA_AboxInterface">
+      <UserDefElement iecname="uaButtonAndSignal" type="T_UA_ButtonAndSignal" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="uaAnalogIn" type="T_UA_AnalogIn" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="uaAnalogOut" type="T_UA_AnalogOut" byteoffset="24" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="uaDigitalIn" type="T_UA_DigitalInput_32" byteoffset="32" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="uaDigitalOut" type="T_UA_DigitalOutput_32" byteoffset="64" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="uaO300_DL_Optic" type="T_UA_O300_DL" byteoffset="96" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="uaO300_ZL_Optic" type="T_UA_O300_ZL" byteoffset="101" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="uaU300_D50_Sound" type="T_UA_U300_D50" byteoffset="104" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="uaU300_P50_Sound" type="T_UA_U300_P50" byteoffset="116" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="uaSchunk" type="T_UA_Schunk_mms" byteoffset="126" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="uaSchunkGripper" type="T_UA_Festo" byteoffset="128" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="uaAccelerometer" type="T_UA_Balluf_bcm0002" byteoffset="132" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
   </TypeList>
   <NodeList>
     <Node name="BaseInterfaceUa">
-      <Node name="PLC_PRG">
-        <Node name="iCount" type="T_INT" access="ReadWrite" />
+      <Node name="GVL_Abox">
+        <Node name="uaAboxInterface" type="T_UA_AboxInterface" access="ReadWrite" />
       </Node>
       <Node name="PRG_MapBox">
         <Node name="UA_Balluf_bcm0002_Data_1" type="T_REAL" access="ReadWrite" />
