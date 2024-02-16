@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://www.plcopen.org/xml/tc6_0200">
-  <fileHeader companyName="Rexroth" productName="ctrlX PLC Engineering" productVersion="ctrlX PLC 1.16.1" creationDateTime="2024-02-07T14:58:28.9317925" />
-  <contentHeader name="Practical Work One" version="0.0" modificationDateTime="2024-02-07T14:56:44.3352338" organization="HEVS" author="Cedric Lenoir">
+  <fileHeader companyName="Rexroth" productName="ctrlX PLC Engineering" productVersion="ctrlX PLC 1.16.1" creationDateTime="2024-02-16T14:16:49.0089297" />
+  <contentHeader name="Practical Work One" version="0.0" modificationDateTime="2024-02-16T14:16:12.6761227" organization="HEVS" author="Cedric Lenoir">
     <Comment>First Test for Practical Work One</Comment>
     <coordinateInfo>
       <fbd>
@@ -20,7 +20,7 @@
           <property name="Author" type="string">Cedric Lenoir</property>
           <property name="Company" type="string">HEVS</property>
           <property name="Description" type="string">First Test for Practical Work One</property>
-          <property name="Project" type="string">PracticalWork_01_Student</property>
+          <property name="Project" type="string">PracticalWork_01_Solution</property>
           <property name="Title" type="string">Practical Work One</property>
           <property name="Version" type="version">0.0</property>
         </ProjectInformation>
@@ -1255,9 +1255,10 @@
                 </interface>
                 <body>
                   <ST>
-                    <xhtml xmlns="http://www.w3.org/1999/xhtml">iCount := iCount + 1;
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">// Used to get inputs of conveyor on TagIn
+GetInput(ioTagIn := TagIn);
 
-GetInput();
+iCount := iCount + 1;
 
 (*
 	Declaration of all FB at the end of the code, this is a good practice.
@@ -1284,24 +1285,33 @@ tonBuzzer(IN := GVL_Abox.uaAboxInterface.uaButtonAndSignal.In_Start,
 		  
 TagOut.Buzzer := tonBuzzer.Q;
 
-SetOutput();</xhtml>
+// Used to set outputs to conveyor on TagOut
+SetOutput(ioTagOut := TagOut);</xhtml>
                   </ST>
                 </body>
                 <addData>
                   <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
                     <Method name="GetInput" ObjectId="62cb3f40-a9e1-4705-bc84-78cd4d674c14">
-                      <interface />
+                      <interface>
+                        <inOutVars>
+                          <variable name="ioTagIn">
+                            <type>
+                              <derived name="ST_ConveyorTagsIn" />
+                            </type>
+                          </variable>
+                        </inOutVars>
+                      </interface>
                       <body>
                         <ST>
-                          <xhtml xmlns="http://www.w3.org/1999/xhtml">TagIn.S1_Pb_Station_1 := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_0;
-TagIn.S2_Pb_Station_2 := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_1;
-TagIn.S3_Pb_Station_3 := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_2;
-TagIn.S4_Pb_OutputConveyor := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_3;
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml">ioTagIn.S1_Pb_Station_1 := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_0;
+ioTagIn.S2_Pb_Station_2 := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_1;
+ioTagIn.S3_Pb_Station_3 := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_2;
+ioTagIn.S4_Pb_OutputConveyor := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_3;
 
-TagIn.B1_SensorActive := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_4;
-TagIn.B2_SensorActive := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_5;
-TagIn.B3_SensorActive := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_6;
-TagIn.B4_OutputConveyorFree := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_7;</xhtml>
+ioTagIn.B1_SensorActive := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_4;
+ioTagIn.B2_SensorActive := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_5;
+ioTagIn.B3_SensorActive := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_6;
+ioTagIn.B4_OutputConveyorFree := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_7;</xhtml>
                         </ST>
                       </body>
                       <addData />
@@ -1309,16 +1319,24 @@ TagIn.B4_OutputConveyorFree := GVL_Abox.uaAboxInterface.uaDigitalIn.Input_0_7;</
                   </data>
                   <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
                     <Method name="SetOutput" ObjectId="03fa5bff-987a-40ca-8d17-cc970da893d6">
-                      <interface />
+                      <interface>
+                        <inOutVars>
+                          <variable name="ioTagOut">
+                            <type>
+                              <derived name="ST_ConveyorTagsOut" />
+                            </type>
+                          </variable>
+                        </inOutVars>
+                      </interface>
                       <body>
                         <ST>
-                          <xhtml xmlns="http://www.w3.org/1999/xhtml">GVL_Abox.uaAboxInterface.uaDigitalOut.Output_0_0 := TagOut.H1_LedStation_1;
-GVL_Abox.uaAboxInterface.uaDigitalOut.Output_0_1 := TagOut.H2_LedStation_2;
-GVL_Abox.uaAboxInterface.uaDigitalOut.Output_0_2 := TagOut.H3_LedStation_3;
-GVL_Abox.uaAboxInterface.uaDigitalOut.Output_0_3 := TagOut.H4_LedOutputConveyor;
-GVL_Abox.uaAboxInterface.uaDigitalOut.Output_0_4 := TagOut.K1_DirectionOutput;
-GVL_Abox.uaAboxInterface.uaDigitalOut.Output_0_5 := TagOut.K2_DirectionH1;
-GVL_Abox.uaAboxInterface.uaDigitalOut.Output_0_6 := TagOut.Buzzer;</xhtml>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml">GVL_Abox.uaAboxInterface.uaDigitalOut.Output_0_0 := ioTagOut.H1_LedStation_1;
+GVL_Abox.uaAboxInterface.uaDigitalOut.Output_0_1 := ioTagOut.H2_LedStation_2;
+GVL_Abox.uaAboxInterface.uaDigitalOut.Output_0_2 := ioTagOut.H3_LedStation_3;
+GVL_Abox.uaAboxInterface.uaDigitalOut.Output_0_3 := ioTagOut.H4_LedOutputConveyor;
+GVL_Abox.uaAboxInterface.uaDigitalOut.Output_0_4 := ioTagOut.K1_DirectionOutput;
+GVL_Abox.uaAboxInterface.uaDigitalOut.Output_0_5 := ioTagOut.K2_DirectionH1;
+GVL_Abox.uaAboxInterface.uaDigitalOut.Output_0_6 := ioTagOut.Buzzer;</xhtml>
                         </ST>
                       </body>
                       <addData />
