@@ -12,13 +12,18 @@ Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 
 # LAB 00 Quick Start, a kind of Hello PLC World!
 
-*Keywords:* **IDE OPC UA  HMI FUNCTION BLOCK CYCLIC TASK**
+*Keywords:* **IDE OPC UA  HMI FUNCTION BLOCK CYCLIC TASK R_TRIG TON**
 
 # Objectif
 Prendre en main le système de développement qui sera utilisé pendant le semestre et découvrir quelques bases qui seront approfondies dans la suite du semestre, que ce soit en pratique ou en théorie. En résumé:
 - Ecrire un mini programme **PLC**.
 - Etablir une communication **OPC UA** entre le **PLC** et un **HMI**.
 - Afficher des informations en provenance du **PLC** et envoyer des commandes.
+
+## Comme exercice
+-   Utiliser un Timer.
+-   Utiliser un trigger.
+-   Programmer un sinus discret avec $\ fs = PLC_{CycleTime} $
 
 # Hardware
 Sous le nom ctrlX Core on trouve un système d'expoitation Linux real-time sur base Ubuntu embarqué dans une commande électrique d'axe. Processeur 64 Bit Quad Core ARM.
@@ -32,7 +37,7 @@ Sous le nom ctrlX Core on trouve un système d'expoitation Linux real-time sur b
 # Logiciels
 
 ## ctrlX WORKS
-*Version of ctrlX WORKS when writing this document:* **1.12.10**
+*Version of ctrlX WORKS when writing this document:* **1.16.00**
 
 ctrlX WORKS est une suite logicielle destinée à programmer et gérer un ensemble ctrlX Core:
 
@@ -357,14 +362,14 @@ Complétez le code, les symboles et OPC UA Monitor pour afficher quelque chose c
 </figure>
 
 # Finaly, write a sinus generator
-The goal is to understand the difference between a signal you could generate with a Matlab script with a *for loop*, and a signal with the PLC which **IS** a form of continous loop, that is, you do not have to use a *for loop*.
+Le but est de comprendre la différence entre un signal que vous pourriez générer avec un script Matlab avec une *boucle for*, et un signal avec l'automate qui **EST** une forme de boucle continue, c'est-à-dire que vous n'êtes pas obligé de le faire. utilisez une *boucle for*.
 
-- Amplitude of the signal must be ``24 [Vdc]``.
-- Frequency of the signal must be ``0.5 [Hz]``.
-- The SIN function in PLC works like the sin function in Matlab, in radians.
-- Pi is given as a constant.
+- L'amplitude du signal doit être ```24 [Vdc]```.
+- La fréquence du signal doit être ```0,5 [Hz]```.
+- La fonction SIN dans PLC fonctionne comme la fonction sin dans Matlab, en radians.
+- Pi est donné comme constante.
 
-> An example of script with Matlab is given below, you just have to thing about the evolution of the angle depending of the cycle time to get ``0.5 [Hz]``.
+> Un exemple de script avec Matlab est donné ci-dessous, il suffit de réfléchir à l'évolution de l'angle en fonction du temps de cycle pour obtenir ``0.5 [Hz]``.
 
 <figure>
     <img src="./img/ShowSinus.png"
@@ -372,7 +377,7 @@ The goal is to understand the difference between a signal you could generate wit
     <figcaption>Monitor Sinus</figcaption>
 </figure>
 
-You have to check the cycle time of the task to be ``10 [ms]``.
+Sie müssen die Zykluszeit der auszuführenden Aufgabe überprüfen ``10 [ms]``.
 <figure>
     <img src="./img/CheckTaskCycleTime.png"
          alt="Check Task Cycle Time">
