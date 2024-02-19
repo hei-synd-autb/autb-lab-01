@@ -12,6 +12,8 @@ Cours AutB
 
 How to check if systems are connected, [at the end of this document](#check-if-system-is-connected).
 
+[Do not forget to power On the conveyor](#conveyor)
+
 ## Get Lab from Git
 
 Create a folder AutB in Documents.
@@ -131,4 +133,47 @@ When you are connected you have access to the core.
     <figcaption>You can see and reset alarms here</figcaption>
 </figure>
 
+### CtrlX axis hardware
+Wait until the drive LEDs are **green** and **green** or **yellow** and **green**.
+
+<figure>
+    <img src="./img/CtrlX_ReadToWork.jpg"
+         alt="Lost image CtrlX_ReadToWork.jpg">
+    <figcaption>Check leds on drives, if blue not ready</figcaption>
+</figure>
+
 ## Check is Siemens S7 is connected and running
+
+If the Idle, Execute and Stopped button LEDs flash and the second drive LED is green, then the Siemens must be stopped to restart connection.
+
+<figure>
+    <img src="./img/BlueGreenRedBlinkingAlternatively.jpg"
+         alt="Lost image BlueGreenRedBlinkingAlternatively">
+    <figcaption>Siemens ready but no connection with ctrlX Core</figcaption>
+</figure>
+
+Check if S7 program for communication loaded
+<figure>
+    <img src="./img/AutB_InterfaceLoaded.jpg"
+         alt="Lost image AutB_InterfaceLoaded.jpg">
+    <figcaption>Program for communication with box loaded is S7</figcaption>
+</figure>
+
+Once the signals from the three lamps form a chase, you can try a reset of the S7 controller.
+
+<figure>
+    <img src="./img/YouCanStopAndRestartS7_here.jpg"
+         alt="Lost image YouCanStopAndRestartS7_here.jpg">
+    <figcaption>You need a stop/start after new download of a ctrlX program</figcaption>
+</figure>
+
+Press reset to cancel the chase.
+
+# Conveyor
+The conveyor must be set to on to be used. **H5**, **S5** and **S6** cannot be driven from the PLC.
+
+<figure>
+    <img src="./img/CheckConveyorPowerOn.jpg"
+         alt="CheckConveyorPowerOn.jpg">
+    <figcaption>To use conveyor, check if it is activated</figcaption>
+</figure>
