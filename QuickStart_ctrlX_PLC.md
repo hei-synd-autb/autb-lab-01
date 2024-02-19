@@ -1,3 +1,13 @@
+<h1 align="left">
+  <br>
+  <img src="./img/hei-en.png" alt="HEI-Vs Logo" width="350">
+  <br>
+  HEI-Vs Engineering School - Industrial Automation Base
+  <br>
+</h1>
+
+Cours AutB
+
 # This is a quick start for ctrlX PLC
 
 Create a folder AutB in Documents.
