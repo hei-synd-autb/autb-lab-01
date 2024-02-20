@@ -14,6 +14,11 @@ Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 
 *Keywords:* **IDE OPC UA  HMI FUNCTION BLOCK CYCLIC TASK R_TRIG TON**
 
+
+*Anhänge:*
+-   [QuickStart_ctrlX_PLC to load and upload your first project from archive.](./QuickStart_ctrlX_PLC.md)
+-   [QuickStart_ctrlX_PLC_Trace to trace a variable.](./QuickStart_ctrlX_PLC_Trace.md)
+
 # Ziel
 Machen Sie sich mit dem Entwicklungssystem vertraut, das während des Semesters verwendet wird, und entdecken Sie einige Grundlagen, die im weiteren Verlauf des Semesters vertieft werden, sei es in der Praxis oder in der Theorie. In Summe:
 - Schreiben Sie ein Mini-SPS-Programm.
@@ -414,6 +419,9 @@ plot(mySinus), grid on
          alt="Matlab Plot Sinus">
     <figcaption>Matlab Plot Sinus</figcaption>
 </figure>
+
+# Trace Sinus
+Verfolgen und interpretieren Sie das Sinussignal, siehe [Anhang QuickStart_ctrlX_PLC_Trace](./QuickStart_ctrlX_PLC_Trace.md).
 
 # Rapport
 > Ich habe keine Beziehung zu diesen praktischen Arbeiten, aber **die praktischen Arbeiten werden nicht erfasst. Cela fait partie de la théorie**.

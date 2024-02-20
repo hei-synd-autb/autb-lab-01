@@ -12,6 +12,10 @@ Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 
 # LAB 00 Quick Start, a kind of Hello PLC World!
 
+*Annexes:*
+-   [QuickStart_ctrlX_PLC to load and upload your first project from archive.](./QuickStart_ctrlX_PLC.md)
+-   [QuickStart_ctrlX_PLC_Trace to trace a variable.](./QuickStart_ctrlX_PLC_Trace.md)
+
 *Keywords:* **IDE OPC UA  HMI FUNCTION BLOCK CYCLIC TASK R_TRIG TON**
 
 # Objectif
@@ -361,7 +365,7 @@ Complétez le code, les symboles et OPC UA Monitor pour afficher quelque chose c
     <figcaption>Monitor Elapsed Time</figcaption>
 </figure>
 
-# Finaly, write a sinus generator
+# Finalement, écrivez un générateur de signal sinus.
 Le but est de comprendre la différence entre un signal que vous pourriez générer avec un script Matlab avec une *boucle for*, et un signal avec l'automate qui **EST** une forme de boucle continue, c'est-à-dire que vous n'êtes pas obligé de le faire. utilisez une *boucle for*.
 
 - L'amplitude du signal doit être ```24 [Vdc]```.
@@ -400,7 +404,7 @@ VAR CONSTANT
 END_VAR
 ```
 
-### The Matlab script with its output.
+### Le script Matlab
 ```Matlab
 mySinus = 1:1:200;
 
@@ -417,6 +421,9 @@ plot(mySinus), grid on
          alt="Matlab Plot Sinus">
     <figcaption>Matlab Plot Sinus</figcaption>
 </figure>
+
+# Trace Sinus
+Tracez et interprétez le signal Sinus, voir [annexe QuickStart_ctrlX_PLC_Trace](./QuickStart_ctrlX_PLC_Trace.md).
 
 # Rapport
 > Il n'y a pas de rapport pour ces travaux pratiques, mais **les travaux pratiques sont censés être compris. Cela fait partie de la théorie**.
