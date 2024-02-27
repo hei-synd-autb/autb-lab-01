@@ -404,14 +404,23 @@ END_VAR
 
 ### The Matlab script with its output.
 ```Matlab
-mySinus = 1:1:200;
+% Sample Time 10 ms = 10/1000
+sampleTime_s = 0.01;
+% Frequency of the signal
+frequency_Hz = 2;
+% Reserve a vector of size 100, Content is irrelevant
+mySinus = 1:1:100;
+time = 1:1:100;
 
-for i = 1:200
-    myAngle_rad = 2 * pi * i / 50;
+for i = 1:100
+    myAngle_rad = 2 * pi * i * sampleTime_s * frequency_Hz;
+    time(i) = i * sampleTime_s;
     mySinus(i) = 24 * sin(myAngle_rad);
 end
-
-plot(mySinus), grid on
+% The signal with completed points between samples
+plot(time,mySinus), grid on;
+% The same, but with samples only
+plot(time,mySinus,"."), grid on;
 ```
 
 <figure>
