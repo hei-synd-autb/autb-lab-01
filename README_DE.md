@@ -46,6 +46,10 @@ Unter dem Namen ctrlX Core finden wir ein Echtzeit-Linux-Betriebssystem auf Basi
 
 ctrlX WORKS ist eine Software-Suite zum Programmieren und Verwalten einer ctrlX Core-Assembly:
 
+### Where to download ctrlX Works ?
+
+[Rexroth Store CtrlX Works 1.20.10](https://developer.community.boschrexroth.com/t5/Store-and-How-to/ctrlX-WORKS/ba-p/16448?_gl=1*1bn23o0*_ga*NDYyODk3NjMxLjE2ODg3MzYwODY.*_ga_1TJGXV7Q4B*MTcwOTcxNDgzOS44Mi4xLjE3MDk3MTQ5MzMuMC4wLjA.*_ga_6YFL8JVC3S*MTcwOTcxNDgzOS45NS4xLjE3MDk3MTQ5MzMuMC4wLjA.*_gcl_aw*R0NMLjE3MDYwMjEzOTguRUFJYUlRb2JDaE1JNG9QWTctRHpnd01WeVpSb0NSMVg5d21IRUFBWUFTQUFFZ0tGd2ZEX0J3RQ..*_gcl_au*MTQwNzY2NjMzLjE3MDQ0NDE4NDcuMTUzOTE1ODk3MS4xNzA2MTAxODE5LjE3MDYxMDE4MTk.) Status on March 06, 2024.
+
 ## ctrlX WORKS - Device Management
 
 Allgemeine Verwaltung von Geräten, **real oder virtuell**, die mit dem Entwicklungs-PC verbunden sind.
