@@ -18,7 +18,7 @@ Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 
 *Keywords:* **IDE OPC UA  HMI FUNCTION BLOCK CYCLIC TASK R_TRIG TON**
 
-# Objectif
+# Nouvel Objectif
 Prendre en main le système de développement qui sera utilisé pendant le semestre et découvrir quelques bases qui seront approfondies dans la suite du semestre, que ce soit en pratique ou en théorie. En résumé:
 - Ecrire un mini programme **PLC**.
 - Etablir une communication **OPC UA** entre le **PLC** et un **HMI**.
