@@ -41,9 +41,14 @@ Sous le nom ctrlX Core on trouve un système d'expoitation Linux real-time sur b
 # Logiciels
 
 ## ctrlX WORKS
-*Version of ctrlX WORKS when writing this document:* **1.16.00**
+*Version of ctrlX WORKS when writing this document:* **1.16.00**. Intermediate version, stable: 1.20.
 
 ctrlX WORKS est une suite logicielle destinée à programmer et gérer un ensemble ctrlX Core:
+
+### Where to download ctrlX Works ?
+
+[Rexroth Store CtrlX Works 1.20.10](https://developer.community.boschrexroth.com/t5/Store-and-How-to/ctrlX-WORKS/ba-p/16448?_gl=1*1bn23o0*_ga*NDYyODk3NjMxLjE2ODg3MzYwODY.*_ga_1TJGXV7Q4B*MTcwOTcxNDgzOS44Mi4xLjE3MDk3MTQ5MzMuMC4wLjA.*_ga_6YFL8JVC3S*MTcwOTcxNDgzOS45NS4xLjE3MDk3MTQ5MzMuMC4wLjA.*_gcl_aw*R0NMLjE3MDYwMjEzOTguRUFJYUlRb2JDaE1JNG9QWTctRHpnd01WeVpSb0NSMVg5d21IRUFBWUFTQUFFZ0tGd2ZEX0J3RQ..*_gcl_au*MTQwNzY2NjMzLjE3MDQ0NDE4NDcuMTUzOTE1ODk3MS4xNzA2MTAxODE5LjE3MDYxMDE4MTk.) Status on March 06, 2024.
+
 
 ## ctrlX WORKS - Device Management
 
